@@ -1,0 +1,20 @@
+class Solution:
+    # @param A : string
+    # @return an integer
+    def braces(self, A):
+        lst = list()
+        flag = False
+        for c in A:
+            if c == '(':
+                lst.append(c)
+                flag = False
+            elif c == ')':
+                prev = lst.pop()
+                if prev == '(':
+                    return 1
+                lst.pop()
+                flag = False
+            elif c in ('+','*','-','/') and flag==False:
+                lst.append('x')
+                flag = True
+        return 0
