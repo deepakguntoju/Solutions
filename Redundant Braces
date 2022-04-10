@@ -15,6 +15,6 @@ class Solution:
                 lst.pop()
                 flag = False
             elif _ in ('+','*','-','/') and flag==False:
-                lst.append('x')
+                lst.append('operator')
                 flag = True
         return 0
