@@ -4,17 +4,17 @@ class Solution:
     def braces(self, A):
         lst = list()
         flag = False
-        for c in A:
-            if c == '(':
+        for _ in A:
+            if _ == '(':
                 lst.append(c)
                 flag = False
-            elif c == ')':
-                prev = lst.pop()
-                if prev == '(':
+            elif _ == ')':
+                bottom = lst.pop()
+                if bottom == '(':
                     return 1
                 lst.pop()
                 flag = False
-            elif c in ('+','*','-','/') and flag==False:
+            elif _ in ('+','*','-','/') and flag==False:
                 lst.append('x')
                 flag = True
         return 0
