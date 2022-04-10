@@ -1,0 +1,19 @@
+class Solution:
+	# @param A : tuple of strings
+	# @return a list of list of integers
+	def anagrams(self, A):
+		if A == None: 
+			return A
+        d = {}
+        lst = []
+        count1 = 0
+        for i in range(len(A)):
+            AA = ''.join(sorted(A[i]))
+            if AA not in d:
+                lst.append([i+1])
+                d[AA] = count1
+                count1 += 1
+            else:
+                lst[d[AA]].append(i+1)
+        
+        return  lst
